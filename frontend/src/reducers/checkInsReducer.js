@@ -3,7 +3,7 @@ function checkInsReducer(state = [], action) {
     case "ADD_CHECKIN":
       return [...state, action.checkIn];
 
-    case "REMOVE_CHECKIN":
+    case "DELETE_CHECKIN":
       return state.filter(c => c.id !== action.id);
 
     default:

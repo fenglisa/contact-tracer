@@ -3,7 +3,7 @@ function symptomsReducer(state = [], action) {
     case "ADD_SYMPTOM":
       return [...state, action.symptom];
 
-    case "REMOVE_SYMPTOM":
+    case "DELETE_SYMPTOM":
       return state.filter(s => s.id !== action.id);
 
     default:
