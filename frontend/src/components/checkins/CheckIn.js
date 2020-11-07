@@ -11,7 +11,7 @@ class CheckIn extends Component {
     return (
       <div>
         <li>
-          {checkIn}
+          {checkIn.name}
           <button onClick={this.handleOnClick}> X </button>
         </li>
       </div>

@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 
 class Status extends Component {
   handleOnClick = () => {
-    this.props.deleteSymptom(this.props.symptoms.id)
+    this.props.deleteSymptom(this.props.symptom.id)
   }
 
   render() {
-    const { symptoms } = this.props;
+    const { symptom } = this.props;
 
     return (
       <div>
-        <ul>
-          {symptoms.map(s => <li key={s.id}> {s} <button onClick={this.handleOnClick}> X </button></li>)}
-        </ul>
+      <li>
+        {symptom.name}
+        <button onClick={this.handleOnClick}> X </button>
+      </li>
       </div>
     );
   }

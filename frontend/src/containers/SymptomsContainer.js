@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SymptomInput from '../components/symptoms/SymptomInput';
-import Status from '../components/symptoms/Status';
+import Symptoms from '../components/symptoms/Symptoms';
 import { connect } from 'react-redux';
 
 class SymptomsContainer extends Component {
@@ -9,7 +9,7 @@ class SymptomsContainer extends Component {
     return (
       <div>
         <SymptomInput addCheckIn={this.props.addSymptom}/>
-        <Status symptoms={this.props.symptoms} deleteSymptom={this.props.deleteSymptom}/>
+        <Symptoms symptoms={this.props.symptoms} deleteSymptom={this.props.deleteSymptom}/>
       </div>
     )
   }
