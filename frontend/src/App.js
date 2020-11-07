@@ -9,26 +9,29 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          Welcome to your
-          <h1>Contact Tracing App</h1>
-          <h4>Please pick an option</h4>
-          <Router>
-            <>
+        <Router>
+          <>
+            <NavLink
+              to="/"
+              exact
+            >Home</NavLink>
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            Welcome to your
+            <h1>Contact Tracing App</h1>
+            <h4>Please pick an option</h4>
               <NavLink
                 to="/checkins"
                 exact
               >Check-ins</NavLink>
-              <NavLink
+              <p><NavLink
                 to="/symptoms"
                 exact
-              >Symptoms</NavLink>
-              <Route exact path="/checkins" component={CheckInsContainer} />
-              <Route exact path="/symptoms" component={SymptomsContainer} />
+              >Symptoms</NavLink></p>
+              <Route exact path="/checkins" component={CheckInsContainer} /><Route exact path="/symptoms" component={SymptomsContainer} />
+            </header>
             </>
           </Router>
-        </header>
       </div>
     );
   }
