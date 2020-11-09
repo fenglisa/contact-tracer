@@ -21,14 +21,14 @@ class App extends Component {
             <h1>Contact Tracing App</h1>
             <h4>Please pick an option</h4>
               <NavLink
-                to="/checkins"
+                to="/check_ins"
                 exact
               >Check-ins</NavLink>
               <p><NavLink
                 to="/symptoms"
                 exact
               >Symptoms</NavLink></p>
-              <Route exact path="/checkins" component={CheckInsContainer} /><Route exact path="/symptoms" component={SymptomsContainer} />
+              <Route exact path="/check_ins" component={CheckInsContainer} /><Route exact path="/symptoms" component={SymptomsContainer} />
             </header>
             </>
           </Router>
