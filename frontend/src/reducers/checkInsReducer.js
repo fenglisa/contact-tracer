@@ -5,12 +5,16 @@ function checkInsReducer(state = [], action) {
     case "ADD_CHECKIN":
       const checkIn = {
         id: uuid(),
-        name: action.checkIn
+        location: {name: action.checkIn},
+        user: {email: "lisafeng10@gmail.com"}
       }
       return state.concat(checkIn);
 
     case "DELETE_CHECKIN":
       return state.filter(c => c.id !== action.id);
+
+    case "FETCH_CHECKINS":
+      return state.concat(action.checkIns);
 
     default:
       return state;
