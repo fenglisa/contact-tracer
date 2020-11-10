@@ -4,8 +4,14 @@ import logo from './logo.svg';
 import './App.css';
 import CheckInsContainer from './containers/CheckInsContainer';
 import SymptomsContainer from './containers/SymptomsContainer';
+import { connect } from 'react-redux';
+import { fetchCheckIns } from './actions/checkIns';
 
 class App extends Component {
+  componentDidMount(){
+    this.props.fetchCheckIns();
+  }
+
   render() {
     return (
       <div className="App">
@@ -37,7 +43,7 @@ class App extends Component {
   }
 };
 
-export default App;
+export default connect(null, {fetchCheckIns})(App)
 
 // function App() {
 //   return (

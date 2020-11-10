@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import CheckInInput from '../components/checkins/CheckInInput';
 import CheckIns from '../components/checkins/CheckIns';
 import { connect } from 'react-redux';
-import { fetchCheckIns } from '../actions/checkIns';
-import { addCheckIn } from '../actions/checkIns';
-import { deleteCheckIn } from '../actions/checkIns';
+import { addCheckIn, deleteCheckIn, fetchCheckIns } from '../actions/checkIns';
 
 class CheckInsContainer extends Component {
-  componentDidMount(){
-    this.props.fetchCheckIns();
-  }
+
+  // componentDidUpdate(prevProps, prevState){
+  //   if(prevState != this.props.checkIns){
+  //     this.props.fetchCheckIns();
+  //   }
+  // }
 
   render() {
     return (
