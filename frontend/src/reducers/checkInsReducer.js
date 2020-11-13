@@ -1,13 +1,13 @@
-import { v4 as uuid } from 'uuid';
+
 
 function checkInsReducer(state = [], action) {
   switch (action.type) {
     case "ADD_CHECKIN":
       const checkIn = {
-        id: uuid(),
-        location: {name: action.checkIn},
-        user: {email: "lisafeng10@gmail.com"}
-      }
+        id: action.data.id,
+        user: action.data.user,
+        location: action.data.location
+      };
       return state.concat(checkIn);
 
     case "DELETE_CHECKIN":

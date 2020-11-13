@@ -13,7 +13,11 @@ export default class CheckInInput extends Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.props.addCheckIn(this.state.text);
+    const checkIn = {
+      user: {email: "lisafeng10@gmail.com"},
+      location: {name: this.state.text}
+    };
+    this.props.addCheckIn(checkIn);
     this.setState({
       text: '',
     });
