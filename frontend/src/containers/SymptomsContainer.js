@@ -8,7 +8,7 @@ class SymptomsContainer extends Component {
   render() {
     return (
       <div>
-        <SymptomInput addCheckIn={this.props.addSymptom}/>
+        <SymptomInput addSymptom={this.props.addSymptom}/>
         <Symptoms symptoms={this.props.symptoms} deleteSymptom={this.props.deleteSymptom}/>
       </div>
     )
