@@ -1,4 +1,6 @@
 class CheckInsController < ApplicationController
+  # before_action :set_check_in, only: [:show, :update, :destroy]
+
   def index
     check_ins = CheckIn.all
     render json: check_ins, include: [:user => {:only => [:email]}, :location => {:only => [:name]}], except: [:user_id, :location_id, :updated_at]
@@ -23,7 +25,21 @@ class CheckInsController < ApplicationController
     end
   end
 
+  def show
+    check_in = CheckIn.find_by_id(params[:id])
+    render json: check_in, include: [:user => {:only => [:email]}, :location => {:only => [:name]}], except: [:user_id, :location_id, :updated_at]
+  end
+
+  def destroy
+    check_in = CheckIn.find_by_id(params[:id])
+    check_in.destroy
+  end
+
   private
+    def set_check_in
+      check_in = CheckIn.find_by_id(params[:id])
+    end
+
     # def check_in_params
     #   params.require(:check_in).permit(:user_id, :location_id)
     # end
