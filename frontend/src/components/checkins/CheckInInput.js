@@ -17,10 +17,12 @@ export default class CheckInInput extends Component {
       user: {email: "lisafeng10@gmail.com"},
       location: {name: this.state.text}
     };
-    this.props.addCheckIn(checkIn);
-    this.setState({
-      text: '',
-    });
+    if(this.state.text !== ''){
+      this.props.addCheckIn(checkIn);
+      this.setState({
+        text: '',
+      });
+    }
   }
 
   render() {
