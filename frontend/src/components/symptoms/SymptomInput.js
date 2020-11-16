@@ -1,22 +1,12 @@
 import React, { Component } from 'react';
+import './symptom.css';
 
 export default class SymptomInput extends Component {
-  state = {
-    text: ''
-  }
-
-  handleOnChange(event) {
-    this.setState({
-      text: event.target.value,
-    });
-  }
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.props.addCheckIn(this.state.text);
-    this.setState({
-      text: '',
-    });
+    debugger;
+    this.props.addSymptom(event.target.symptom.value);
   }
 
   render() {
@@ -24,10 +14,17 @@ export default class SymptomInput extends Component {
       <div>
       Log Symptom
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
-          <input
-            type="text"
-            value={this.state.text}
-            onChange={(event) => this.handleOnChange(event)} />
+          <input type="radio" name="symptom" value="Cough"/>Cough
+          <div class="divider"/>
+          <input type="radio" name="symptom" value="Fever"/>Fever
+          <div class="divider"/>
+          <input type="radio" name="symptom" value="Sore Throat"/>Sore Throat
+          <input type="radio" name="symptom" value="Loss of taste or smell"/>Loss of taste or smell
+          <div class="divider"/>
+          <input type="radio" name="symptom" value="Shortness of breath"/>Shortness of breath
+          <div class="divider"/>
+          <input type="radio" name="symptom" value="Body aches"/>Body aches
+          <br/>
           <input type="submit" />
         </form>
       </div>
