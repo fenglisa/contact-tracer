@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Status extends Component {
+class Symptom extends Component {
   handleOnClick = () => {
     this.props.deleteSymptom(this.props.symptom.id)
   }
@@ -19,4 +19,4 @@ class Status extends Component {
   }
 };
 
-export default Status;
+export default Symptom;

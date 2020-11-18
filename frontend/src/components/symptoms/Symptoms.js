@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Status from './Status';
+import Symptom from './Symptom';
 
 class Symptoms extends Component {
+
   render() {
     return(
       <ul>
-        {this.props.symptoms.map(s => <Status key={s.id} symptom={s} deleteSymptom={this.props.deleteSymptom}/>)}
+        {this.props.symptoms.map(s => <Symptom key={s.id} symptom={s} deleteSymptom={this.props.deleteSymptom}/>)}
       </ul>
     );
   }
