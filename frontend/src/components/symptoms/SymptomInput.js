@@ -15,14 +15,15 @@ export default class SymptomInput extends Component {
       Log Symptom
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
           <input type="radio" name="symptom" value="Cough"/>Cough
-          <div class="divider"/>
+          <div className="divider"/>
           <input type="radio" name="symptom" value="Fever"/>Fever
-          <div class="divider"/>
+          <div className="divider"/>
           <input type="radio" name="symptom" value="Sore Throat"/>Sore Throat
+          <div className="divider"/>
           <input type="radio" name="symptom" value="Loss of taste or smell"/>Loss of taste or smell
-          <div class="divider"/>
+          <div className="divider"/>
           <input type="radio" name="symptom" value="Shortness of breath"/>Shortness of breath
-          <div class="divider"/>
+          <div className="divider"/>
           <input type="radio" name="symptom" value="Body aches"/>Body aches
           <br/>
           <input type="submit" />
