@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SymptomInput from '../components/symptoms/SymptomInput';
 import Symptoms from '../components/symptoms/Symptoms';
 import { connect } from 'react-redux';
+import { addSymptom, deleteSymptom } from '../actions/symptoms';
 
 class SymptomsContainer extends Component {
 
@@ -21,9 +22,9 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  addSymptom: symptom => dispatch({ type: "ADD_SYMPTOM", symptom }),
-  deleteSymptom: id => dispatch({type: 'DELETE_SYMPTOM', id })
-})
+// const mapDispatchToProps = dispatch => ({
+//   addSymptom: symptom => dispatch({ type: "ADD_SYMPTOM", symptom }),
+//   deleteSymptom: id => dispatch({type: 'DELETE_SYMPTOM', id })
+// })
 
-export default connect(mapStateToProps, mapDispatchToProps)(SymptomsContainer)
+export default connect(mapStateToProps, {addSymptom, deleteSymptom})(SymptomsContainer)

@@ -5,7 +5,6 @@ export default class SymptomInput extends Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
-    debugger;
     this.props.addSymptom(event.target.symptom.value);
   }
 
