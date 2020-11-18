@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import CheckInsContainer from './containers/CheckInsContainer';
 import SymptomsContainer from './containers/SymptomsContainer';
+import Status from './components/Status';
 import { connect } from 'react-redux';
 import { fetchCheckIns } from './actions/checkIns';
 
@@ -25,7 +26,8 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             Welcome to your
             <h1>Contact Tracing App</h1>
-            <h4>Please pick an option</h4>
+            < Status />
+            <p>Please pick an option</p>
               <NavLink
                 to="/check_ins"
                 exact
