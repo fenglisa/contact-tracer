@@ -11,10 +11,12 @@ import thunk from 'redux-thunk';
 import { combineReducers } from "redux";
 import checkInsReducer from './reducers/checkInsReducer';
 import symptomsReducer from './reducers/symptomsReducer';
+import statusReducer from './reducers/statusReducer';
 
 const rootReducer = combineReducers({
   checkIns: checkInsReducer,
-  symptoms: symptomsReducer
+  symptoms: symptomsReducer,
+  status: statusReducer
 });
 
 const store = createStore(rootReducer, compose(

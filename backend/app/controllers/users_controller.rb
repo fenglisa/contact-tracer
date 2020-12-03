@@ -14,6 +14,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    user = User.find_by_id(params[:id])
+    user.update(positive: params[:user][:positive])
+    render json: user, except: [:updated_at, :created_at]
+  end
+
   private
     def user_params
       params.require(:user).permit(:email)
