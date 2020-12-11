@@ -3,6 +3,7 @@ import SymptomInput from '../components/symptoms/SymptomInput';
 import Symptoms from '../components/symptoms/Symptoms';
 import { connect } from 'react-redux';
 import { addSymptom, deleteSymptom } from '../actions/symptoms';
+import { updateStatus } from '../actions/status';
 
 class SymptomsContainer extends Component {
 
@@ -11,6 +12,7 @@ class SymptomsContainer extends Component {
       <div>
         <SymptomInput addSymptom={this.props.addSymptom}/>
         <Symptoms symptoms={this.props.symptoms} deleteSymptom={this.props.deleteSymptom}/>
+        {this.props.symptoms.length > 4 ? this.props.updateStatus(3) : null}
       </div>
     )
   }
@@ -27,4 +29,4 @@ const mapStateToProps = state => {
 //   deleteSymptom: id => dispatch({type: 'DELETE_SYMPTOM', id })
 // })
 
-export default connect(mapStateToProps, {addSymptom, deleteSymptom})(SymptomsContainer)
+export default connect(mapStateToProps, {addSymptom, deleteSymptom, updateStatus})(SymptomsContainer)

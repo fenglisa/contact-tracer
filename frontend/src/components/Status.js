@@ -8,11 +8,11 @@ class Status extends Component {
     this.props.fetchStatus(3);
   }
 
-  handleOnClick = () => {
+  treatCovid = () => {
     this.props.treatStatus(3);
   }
 
-  handleOnTheClick = () => {
+  getCovid = () => {
     this.props.updateStatus(3);
   }
 
@@ -22,8 +22,8 @@ class Status extends Component {
       <p>
         Current Status: <strong>{this.props.status ? 'Positive' : 'Negative'}</strong>
       </p>
-      <button onClick={this.handleOnClick}> Treat COVID </button>
-      <button onClick={this.handleOnTheClick}> Get COVID :(</button>
+      <button onClick={this.treatCovid}> Treat COVID </button>
+      <button onClick={this.getCovid}> Get COVID :(</button>
       </div>
     );
   }
