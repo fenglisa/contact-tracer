@@ -20,8 +20,9 @@ class Status extends Component {
     return (
       <div>
       <p>
-        Current Status: <strong>{this.props.status ? 'Positive' : 'Negative'}</strong>
+        Current Status: <strong>{this.props.status ? 'Potentially Positive' : 'Negative'}</strong>
       </p>
+      <>{this.props.status ? alert('Please consult with a physician as soon as possible') : null}</>
       <button onClick={this.treatCovid}> Treat COVID </button>
       <button onClick={this.getCovid}> Get COVID :(</button>
       </div>
